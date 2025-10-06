@@ -1,7 +1,7 @@
 # =========================
-# 1. BUILD STAGE
+# 1. BUILD STAGE (.NET 9)
 # =========================
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /app
 
 # Copy csproj and restore dependencies
@@ -15,15 +15,15 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 # =========================
-# 2. RUNTIME STAGE
+# 2. RUNTIME STAGE (.NET 9)
 # =========================
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
 
 # Copy published files from the build stage
 COPY --from=build /app/out ./
 
-# Expose port 8080 (Render expects your app to listen on this port)
+# Render requires port 8080
 ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
 
