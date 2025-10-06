@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToxicFitnessAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f9ddcefa7b7063e35ec47b2c2e3fd084d25bcb2")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToxicFitnessAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToxicFitnessAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

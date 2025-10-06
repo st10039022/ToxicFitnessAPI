@@ -45,11 +45,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+// ✅ Always enable Swagger (for production on Render)
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ToxicFitnessAPI v1");
+    c.RoutePrefix = string.Empty; // makes Swagger UI available at root "/"
+});
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
